@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+
+body, html {
+height: 100%;
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+* {
+box-sizing: border-box;
+}
+
+.registerbtn {
+background-color: #4CAF50;
+color: white;
+padding: 16px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 20%;
+opacity: 0.9;
+}
+
+
+.bg-image{
+/* The image used */
+background-image: url("bg.jpg");
+
+
+filter: blur(8px);
+-webkit-filter: blur(8px);
+
+
+height: 100%;
+
+
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+
+.bg-text {
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+color: white;
+font-weight: bold;
+border: 2px solid #000000;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 30%;
+padding:70px;
+text-align: center;
+}
+
+
+
+#Uname{
+width: 300px;
+height: 30px;
+border: none;
+border-radius: 3px;
+padding-left: 8px;
+}
+#Pass{
+width: 300px;
+height: 30px;
+border: none;
+border-radius: 3px;
+padding-left: 8px;
+
+}
+
+
+
+#log{
+width: 200px;
+height: 30px;
+border: none;
+border-radius: 17px;
+padding-left: 7px;
+color: blue;
+
+
+}
+.button {
+background-color: #F3F4F4; /* Green */
+border: none;
+color: blue;
+padding: 9.5px 80.5px;
+border-radius: 17px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 11.5px;
+}
+</style>
+
+
+
+<title> Login Page </title>
+<script>
+function vfun(){
+var username=document.forms["form"]["username"].value;
+var password=document.forms["form"]["password"].value;
+
+
+
+
+
+if(username==null || username==""){
+document.getElementbyID("errorBox").innerHTML =
+"enter the user name";
+return false;
+}
+
+
+
+
+
+if(password==null || password==""){
+document.getElementbyID("errorBox").innerHTML =
+"enter the password";
+return false;
+}
+
+
+
+
+
+if (username == "admin" && password == "root"){
+setTimeout(function() {window.location = "Admin_Search.html" });
+
+}
+
+
+
+
+
+if (username != "admin" || password != "root"){
+alert("user name and password incorrect");}
+}
+</script>
+</head>
+<body>
+<div class="bg-image"></div>
+<div class="bg-text">
+<center> <h1> Login </h1> </center>
+<form name="form" onsubmit=" vfun()">
+<div class="container">
+
+<center> <input type="text" placeholder="Enter Username" id="Uname" name="username" required></center>
+<br> <br>
+
+
+<center> <input type="password" placeholder="Enter Password" id="Pass" name="password" required></center>
+<br> <br>
+<div id="errorBox"></div><br>
+
+<button type="submit" name="log" id="log" data-inline="true"> Login </button>
+<br><br>
+
+<a href="index.html" class="button" data-inline="true">Home</a>
+
+
+</div>
+</form>
+
+</body>
+</html>
